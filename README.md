@@ -15,7 +15,7 @@ Furthermore, you need to copy `UnityGRPC/Assets/link.xml` to your `Assets` folde
 
 ### Compiling protocol buffer messages
 
-The unity project contain the compiled versions of the proto files found in `proto`. In case you want to tinker around a bit. You can compile the changed proto files the following way.
+The unity and python project contain the compiled versions of the proto files found in the [proto](./proto) folder. In case you want to tinker around a bit, you can compile the proto files in the following way.
 
 For Unity, you need to use `dotnet` and build the mock project `csharp`. All required dependencies will be installed by `dotnet`.
 
@@ -51,6 +51,7 @@ For testing, you can run both, the Unity project as well as the Python server/cl
 When the scene is running in the Unity Editor, you can send a message from Python with:
 
 ```shell
+# python python/send.py <grpc_receiver> <message>
 python python/send.py localhost:9090 "Hello from Python"
 ```
 
@@ -59,6 +60,7 @@ The string "Hello from Python" should appear in the Editor.
 If you want to receive a message send from Unity, you need to start the Python server first:
 
 ```shell
+# python python/receive.py <grpc_server_port>
 python python/receive.py 9091
 ```
 
