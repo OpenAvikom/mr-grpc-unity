@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "hello.proto";
+
+option csharp_namespace = "Proto.Services";
+
+/**
+ * 
+ */
+service HelloService {
+  rpc SayHello(HelloMessage) returns (HelloMessage) {}
+}
