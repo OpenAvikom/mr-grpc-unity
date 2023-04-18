@@ -11,6 +11,10 @@ It contains all required gRPC DLLs as well as compatible protocol buffer well-kn
 Make sure that all DLL targets in `Grpc.Core/runtimes/win/<arch>` are correctly set.
 Furthermore, you need to copy `UnityGRPC/Assets/link.xml` to your `Assets` folder to prevent Unity/IL2CPP to accidentally strip vital protocol buffer resources from your project.
 
+## ⚠️ Large repo ahead ⚠️ 
+
+If you want do test this out, please consider downloading a [release](https://github.com/OpenAvikom/mr-grpc-unity/releases) archive or better download the archive from the location listed in the release's description. As the repo's LFS contains more than 300 MB even just a couple of cloning operations already drain our monthly quota.
+
 ## Example
 
 ### Compiling protocol buffer messages
@@ -23,6 +27,7 @@ For Unity, you need to use `dotnet` and build the mock project `csharp`. All req
 cd <repository_root>
 dotnet build csharp
 ```
+
 
 For Python, you need to install `grpcio-tools` (preferably via `pip`) and run the `protoc` compiler. The output will be written into the `python` folder.
 
